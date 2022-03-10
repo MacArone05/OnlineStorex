@@ -1,0 +1,50 @@
+﻿@page
+@model OnlineStorex.Pages.Product.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Store</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Store.ID" />
+            <div class="form-group">
+                <label asp-for="Store.ProductName" class="control-label"></label>
+                <input asp-for="Store.ProductName" class="form-control" />
+                <span asp-validation-for="Store.ProductName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Store.ReleaseDate" class="control-label"></label>
+                <input asp-for="Store.ReleaseDate" class="form-control" />
+                <span asp-validation-for="Store.ReleaseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Store.BuyerName" class="control-label"></label>
+                <input asp-for="Store.BuyerName" class="form-control" />
+                <span asp-validation-for="Store.BuyerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Store.Price" class="control-label"></label>
+                <input asp-for="Store.Price" class="form-control" />
+                <span asp-validation-for="Store.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
